@@ -1,0 +1,348 @@
+<p>Intelligent home pregnancy management method based on multi-modal data fusion</p>
+<p>Yin Wang<sup>1</sup>, Zhiwei Zuo<sup>1</sup>, Wei Wang<sup>1</sup>, Nuan Qiu <sup>1*</sup></p>
+<p><sup>1</sup> Beijing Aikangtai Technology Co., Ltd., Beijing, China</p>
+<p>Email: <a href="mailto:qiun@ikangtai.com">qiun@ikangtai.com</a></p>
+<p>Abstract: With the issuance of the national three-child policy, the field of female reproduction has attracted more and more attention. To care for female reproductive health and help the implementation of the government's three child policy, we have proposed an intelligent home pregnancy preparation management method based on multimodal data fusion, namely FAM (Fertility Awareness Method, FAM). This method introduces big data, multimodal data fusion and image recognition technology. By inputting multi-modal data such as menstrual cycle, basal body temperature, ovulation test paper and cervical mucus of the pregnant woman, it can automatically predict the ovulation day and menstrual period information of the pregnant woman. This improves the pregnancy success rate of pregnant women, breaks the limitations of the traditional method of finding the ovulation day through monomodal data, and facilitates the monitoring of pregnant women at home. Finally, compared with the single-mode method qualitatively and quantitatively, the preliminary experimental results show that the accuracy of FAM method in identifying ovulation date is as high as 89%, and the accuracy in predicting menstrual period is as high as 93%, and the pregnancy success rate of pregnant women can be increased three times in at least nine cycles.</p>
+<p>Key words: multimodal data fusion; FAM; ovulation day; menstrual period information</p>
+<p>INCTRODCTION</p>
+<p>In recent years, multimodal data fusion technology has become popular in the medical field as a kind of deep learning technology, and it plays a very important role in assisting clinical diagnosis and condition prediction of diseases. With the country's full liberalization and encouragement of three births, female reproductive health will become a major focus of the medical field, and the application of deep learning technology to the field of female reproductive health is bound to become a major trend. Therefore, to care for female reproductive health and help the government implement the three-child policy, we propose an intelligent home pregnancy management method based on multi-modal data fusion.</p>
+<p>First of all, this method can help pregnant women to get pregnant quickly and naturally by predicting the next menstrual period and finding the ovulation day. The key to rapid natural pregnancy is to find the ovulation date of pregnant women. As long as the ovulation date is found, the roommate shall be arranged in time, pregnancy is a natural thing (except for patients with reproductive diseases)! However, the traditional methods of finding the ovulation day mostly use monomodal data, two-dimensional or three-dimensional modal data to predict the ovulation day of pregnant women.</p>
+<p>For example, the basal body temperature prediction method for ovulation is the oldest, simplest and most widely used method, which is still used today. But most people think that this method is retrospective and can only determine the presence or absence of ovulation, and cannot predict the time of ovulation. There is also the earliest cervical mucus observation method proposed by Australian doctor Dr. Billings<sup> [1]</sup>, which predicts the occurrence of ovulation by feeling, touching and observing the properties of cervical mucus with the naked eye. This method usually requires continuous observation for multiple cycles, a long time and the evaluation of cervical mucus is subjective. Or the menstrual calendar method developed later, Marcos et al.<sup> [2]</sup> designed a fixed formula to input the menstrual information of the previous cycle to calculate the next menstrual period and the fertile period, thereby predicting the ovulation day, although it is more convenient than the cervical mucus observation method It saves time, but this method is not suitable for women with irregular cycles.</p>
+<p>Later, Yussman et al.<sup> [3]</sup> used the method of measuring the blood LH value and Kratochvil first reported in 1972 that the follicles were examined by ultrasound<sup> [4]</sup>, which was later the B-ultrasound used in the hospital. Although the above two methods are accurate, they both require patients to go to the hospital for multiple inspections. The inspection costs are relatively high, which is bound to increase the financial burden of the family. Later, the LH test strips were produced so that all women who were preparing for pregnancy could be tested at home to predict the day of ovulation. It is also very important for many infertility patients to predict ovulation. This was also verified in the experiment of Corson et al<sup> [5]</sup>. However, LH test paper testing is usually combined with basal body temperature testing.</p>
+<p>In summary, through the understanding and analysis of the above methods for finding ovulation days, we found that few people can integrate these important data together. Therefore, based on the above-mentioned multiple modal data, an iFAM model based on deep learning and big data technology is proposed. This model uses the theoretical knowledge of convolutional neural network as the basis, and inputs the menstrual cycle data and basal body temperature data of each pregnant woman, Ovulation test paper data and cervical mucus data, combined with the information of these data, automatically predict the ovulation day and menstrual period information of the pregnant woman. Preliminary experimental results show that the accuracy of the FAM method in identifying ovulation days is as high as 89%, and the accuracy in predicting menstruation is as high as 93%, and the pregnancy success rate of pregnant women can be increased to 273%.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>METHOD</p>
+<p>To meet the needs of pregnant women who can carry out pregnancy preparation management at home and reach the level of medical assistance, and in view of the lack of multimodal data fusion and intelligent analysis in the field of female reproductive health, we propose a menstrual and ovulation day prediction model iFAM model based on deep learning and big data technology. The model consists of three parts: test paper image recognition structure, data fusion structure and intelligent prediction and analysis structure, as shown in the Fig1.</p>
+<p>Firstly, the test paper image recognition structure uses the HED model and OpenCV technology to extract the test paper image from the image to be recognized to avoid the influence of complex backgrounds. Secondly, by using the CRNN model, the position of the recognition line in the image of the test paper to be recognized is obtained, and the color space of the position of the recognition line is converted into the LAB color space. Then, extract the image brightness value corresponding to the identification line position in the LAB color space, compare it with the brightness value range in the detection line information, and determine the preset ratio range in the detection line information corresponding to the type of test paper. To determine the test paper detection result corresponding to the ratio.</p>
+<p>The data fusion structure adopts data post fusion technology, inputs four or more kinds of reference data into the neural network, obtains the weight of each reference data through training, and can more accurately lock the ovulation day.</p>
+<p>&nbsp;</p>
+<p>Fig 1 iFAM model predicts ovulation day and menstrual period</p>
+<p>EXPERIMENT</p>
+<ol>
+<li>Dataset</li>
+</ol>
+<p>This experiment recruited 1866 women who were over 20 years old who were preparing for pregnancy. Through statistics of the physical conditions of these women, we found the following four types, and we classified them, as shown in Table 1. Women between the ages of 26 and 30 have the most people in a healthy state. This also shows that the age of women who are preparing for pregnancy in our country is getting older, and there are more and more cases of late marriage and late childbirth.</p>
+<p>&nbsp;</p>
+<p>Table 1 Details of pregnant women</p>
+<table>
+<tbody>
+<tr>
+<td width="113">
+<p>Age</p>
+</td>
+<td width="97">
+<p>20~25</p>
+</td>
+<td width="67">
+<p>26~30</p>
+</td>
+<td width="71">
+<p>31~35</p>
+</td>
+<td width="60">
+<p>36~40</p>
+</td>
+<td width="82">
+<p>Above 40</p>
+</td>
+</tr>
+<tr>
+<td width="113">
+<p>Healthy</p>
+</td>
+<td width="97">
+<p>380</p>
+</td>
+<td width="67">
+<p>568</p>
+</td>
+<td width="71">
+<p>229</p>
+</td>
+<td width="60">
+<p>77</p>
+</td>
+<td width="82">
+<p>22</p>
+</td>
+</tr>
+<tr>
+<td width="113">
+<p>Insufficient corpus luteum</p>
+</td>
+<td width="97">
+<p>2</p>
+</td>
+<td width="67">
+<p>12</p>
+</td>
+<td width="71">
+<p>10</p>
+</td>
+<td width="60">
+<p>3</p>
+</td>
+<td width="82">
+<p>0</p>
+</td>
+</tr>
+<tr>
+<td width="113">
+<p>Polycystic</p>
+</td>
+<td width="97">
+<p>80</p>
+</td>
+<td width="67">
+<p>106</p>
+</td>
+<td width="71">
+<p>25</p>
+</td>
+<td width="60">
+<p>6</p>
+</td>
+<td width="82">
+<p>0</p>
+</td>
+</tr>
+<tr>
+<td width="113">
+<p>Infertility</p>
+</td>
+<td width="97">
+<p>60</p>
+</td>
+<td width="67">
+<p>99</p>
+</td>
+<td width="71">
+<p>49</p>
+</td>
+<td width="60">
+<p>16</p>
+</td>
+<td width="82">
+<p>5</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<p>These women will continue to prepare for pregnancy for up to 9 cycles. During each cycle during pregnancy, menstrual information, basal body temperature and cervical mucus trait data will be continuously recorded, and LH test strips and pictures of early pregnancy test strips will be uploaded to the database.</p>
+<p>Among them, the pictures of LH test strips are marked with Labelme software. Labelme is an image labeling tool developed by the Computer Science and Artificial Intelligence Laboratory (CSAIL) of MIT. People can use this tool to create customized labeling tasks or perform image labeling. The source code of the project is open source.</p>
+<ol start="2">
+<li>Ablation experiment</li>
+</ol>
+<p>In the ablation experiment, the accuracy of predicting ovulation day and menstrual period was compared with multi-modal data fusion and single-modal, two-dimensional or three-dimensional modal data fusion. The accuracy of the FAM method in identifying ovulation days (Accuracy1) is as high as 89%, and the accuracy in predicting menstruation (Accuracy2) is as high as 93%. The accuracy of predicting ovulation day and menstrual period is higher than that of single-modal, two-dimensional or three-dimensional modal data fusion.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>Table 2 Table of results of ablation experiments</p>
+<table>
+<tbody>
+<tr>
+<td width="85">
+<p>Method</p>
+</td>
+<td width="43">
+<p>LH</p>
+</td>
+<td width="42">
+<p>BBT</p>
+</td>
+<td width="76">
+<p>Cervical mucus</p>
+</td>
+<td width="70">
+<p>Calendar method</p>
+</td>
+<td width="105">
+<p>Accuracy1(%)</p>
+</td>
+<td width="105">
+<p>Accuracy2(%)</p>
+</td>
+</tr>
+<tr>
+<td width="85">
+<p>Single mode</p>
+</td>
+<td width="43">
+<p>&radic;</p>
+</td>
+<td width="42">
+<p>-</p>
+</td>
+<td width="76">
+<p>-</p>
+</td>
+<td width="70">
+<p>-</p>
+</td>
+<td width="105">
+<p>72.6%</p>
+</td>
+<td width="105">
+<p>-</p>
+</td>
+</tr>
+<tr>
+<td width="85">
+<p>Two-dimensional</p>
+</td>
+<td width="43">
+<p>&radic;</p>
+</td>
+<td width="42">
+<p>&radic;</p>
+</td>
+<td width="76">
+<p>-</p>
+</td>
+<td width="70">
+<p>-</p>
+</td>
+<td width="105">
+<p>81.3%</p>
+</td>
+<td width="105">
+<p>-</p>
+</td>
+</tr>
+<tr>
+<td width="85">
+<p>Three-dimensional</p>
+</td>
+<td width="43">
+<p>&radic;</p>
+</td>
+<td width="42">
+<p>&radic;</p>
+</td>
+<td width="76">
+<p>-</p>
+</td>
+<td width="70">
+<p>&radic;</p>
+</td>
+<td width="105">
+<p>85.2%</p>
+</td>
+<td width="105">
+<p>89.8%</p>
+</td>
+</tr>
+<tr>
+<td width="85">
+<p>FAM</p>
+</td>
+<td width="43">
+<p>&radic;</p>
+</td>
+<td width="42">
+<p>&radic;</p>
+</td>
+<td width="76">
+<p>&radic;</p>
+</td>
+<td width="70">
+<p>&radic;</p>
+</td>
+<td width="105">
+<p>88.9%</p>
+</td>
+<td width="105">
+<p>93%</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<p>Table 3 Details of the pregnancy success rate of 9-cycle pregnant women</p>
+<table>
+<tbody>
+<tr>
+<td width="95">
+<p>Age</p>
+</td>
+<td width="59">
+<p>20~25</p>
+</td>
+<td width="67">
+<p>26~30</p>
+</td>
+<td width="71">
+<p>31~35</p>
+</td>
+<td width="60">
+<p>36~40</p>
+</td>
+<td width="82">
+<p>40以上</p>
+</td>
+</tr>
+<tr>
+<td width="95">
+<p>Healthy/ Insufficient corpus luteum</p>
+</td>
+<td width="59">
+<p>98%</p>
+</td>
+<td width="67">
+<p>97%</p>
+</td>
+<td width="71">
+<p>92%</p>
+</td>
+<td width="60">
+<p>89%</p>
+</td>
+<td width="82">
+<p>70%</p>
+</td>
+</tr>
+<tr>
+<td width="95">
+<p>Polycystic</p>
+</td>
+<td width="59">
+<p>87.5%</p>
+</td>
+<td width="67">
+<p>80.1%</p>
+</td>
+<td width="71">
+<p>68.0%</p>
+</td>
+<td width="60">
+<p>50%</p>
+</td>
+<td width="82">
+<p>-</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<p>Table 2 and Table 3 show that using the FAM method, the pregnancy success rate of pregnant women is the highest. From this, we can see the importance of finding the ovulation day. In response to the above-mentioned, the key to a fast and natural pregnancy is to find the ovulation day of the pregnant woman. As long as the ovulation day is found and the intercourse is arranged in time, pregnancy is a natural thing.</p>
+<p>CONCLUSION</p>
+<p>In this paper, we focus on solving the problem of home pregnancy monitoring and management of pregnant women. The IFAM model we proposed introduces the hed and crnn framework, and uses deep learning and opencv technology to fuse multimodal data to obtain more fusion information, to predict the ovulation date and menstrual period of pregnant women, to improve the success rate of women's pregnancy.</p>
+<p>In the future work, we seek to cooperate with the hospital to combine the multimodal data with the data in the B-ultrasound measurement report, six hormone reports or AMH monitoring report, to achieve higher accuracy in predicting the ovulation day of pregnant women.</p>
+<p>REFERENCES</p>
+<p>[1] Guida M, Tommaselli G A, Palomba S, et al. Efficacy of methods for determining ovulation in a natural family planning program[J]. Fertility and sterility, 1999, 72(5): 900-904.</p>
+<p>[2] Ar&eacute;valo M, Sinai I, Jennings V. A fixed formula to define the fertile window of the menstrual cycle as the basis of a simple method of natural family planning[J]. Contraception, 1999, 60(6): 357-360.</p>
+<p>[3] P. Frank-Herrmann, etc. The effectiveness of a fertility awareness based method to avoid pregnancy in relation to a couple&rsquo;s sexual behavior during the fertile time: a prospective longitudinal study. Human Reproduction pp.1-10, 2007.</p>
+<p>[4] Ferreira-Poblete A. The probability of conception on different days of the cycle with respect to ovulation: an overview[J]. Advances in Contraception, 1997, 13(2-3): 83-95.</p>
+<p>[5] Su H W, Yi Y C, Wei T Y, et al. Detection of ovulation, a review of currently available methods[J]. Bioengineering &amp; translational medicine, 2017, 2(3): 238-246.</p>
+<p>&nbsp;</p>
