@@ -1,4 +1,4 @@
-Intelligent home pregnancy management method based on multi-modal data fusion
+# Intelligent home pregnancy management method based on multi-modal data fusion
 
 Yin Wang1, Zhiwei Zuo1, Wei Wang1, Nuan Qiu 1\*
 
@@ -27,7 +27,7 @@ pregnant women can be increased to 273% in at least nine cycles.
 Key words: multimodal data fusion; FAM; ovulation day; menstrual period
 information
 
-INCTRODCTION
+## INCTRODCTION
 
 In recent years, multimodal data fusion technology has become popular in the
 medical field as a kind of deep learning technology, and it plays a very
@@ -90,7 +90,7 @@ results show that the accuracy of the FAM method in identifying ovulation days
 is as high as 89%, and the accuracy in predicting menstruation is as high as
 93%, and the pregnancy success rate of pregnant women can be increased to 273%.
 
-METHOD
+## METHOD
 
 To meet the needs of pregnant women who can carry out pregnancy preparation
 management at home and reach the level of medical assistance, and in view of the
@@ -116,13 +116,13 @@ The data fusion structure adopts data post fusion technology, inputs four or
 more kinds of reference data into the neural network, obtains the weight of each
 reference data through training, and can more accurately lock the ovulation day.
 
-![](media/52b8f56303c91f88cc98148af8aaaac8.png)
+![Fig1](https://raw.githubusercontent.com/chenzhiyuanding/czy.GitHub.io/gh-pages/image/fig1.png)
 
 Fig 1 iFAM model predicts ovulation day and menstrual period
 
-EXPERIMENT
+## EXPERIMENT
 
-1.  Dataset
+### Dataset
 
 This experiment recruited 1866 women who were over 20 years old who were
 preparing for pregnancy. Through statistics of the physical conditions of these
@@ -152,7 +152,7 @@ Artificial Intelligence Laboratory (CSAIL) of MIT. People can use this tool to
 create customized labeling tasks or perform image labeling. The source code of
 the project is open source.
 
-1.  Ablation experiment
+### Ablation experiment
 
 In the ablation experiment, the accuracy of predicting ovulation day and
 menstrual period was compared with multi-modal data fusion and single-modal,
@@ -185,7 +185,7 @@ and natural pregnancy is to find the ovulation day of the pregnant woman. As
 long as the ovulation day is found and the intercourse is arranged in time,
 pregnancy is a natural thing.
 
-CONCLUSION
+## CONCLUSION
 
 In this paper, we focus on solving the problem of home pregnancy monitoring and
 management of pregnant women. The IFAM model we proposed introduces the hed and
@@ -199,25 +199,25 @@ multimodal data with the data in the B-ultrasound measurement report, six
 hormone reports or AMH monitoring report, to achieve higher accuracy in
 predicting the ovulation day of pregnant women.
 
-REFERENCES
+## REFERENCES
 
-[1] Guida M, Tommaselli G A, Palomba S, et al. Efficacy of methods for
-determining ovulation in a natural family planning program[J]. Fertility and
-sterility, 1999, 72(5): 900-904.
+>   [1] Guida M, Tommaselli G A, Palomba S, et al. Efficacy of methods for
+>   determining ovulation in a natural family planning program[J]. Fertility and
+>   sterility, 1999, 72(5): 900-904.
 
-[2] Arévalo M, Sinai I, Jennings V. A fixed formula to define the fertile window
-of the menstrual cycle as the basis of a simple method of natural family
-planning[J]. Contraception, 1999, 60(6): 357-360.
+>   [2] Arévalo M, Sinai I, Jennings V. A fixed formula to define the fertile
+>   window of the menstrual cycle as the basis of a simple method of natural
+>   family planning[J]. Contraception, 1999, 60(6): 357-360.
 
-[3] P. Frank-Herrmann, etc. The effectiveness of a fertility awareness based
-method to avoid pregnancy in relation to a couple’s sexual behavior during the
-fertile time: a prospective longitudinal study. Human Reproduction pp.1-10,
-2007.
+>   [3] P. Frank-Herrmann, etc. The effectiveness of a fertility awareness based
+>   method to avoid pregnancy in relation to a couple’s sexual behavior during
+>   the fertile time: a prospective longitudinal study. Human Reproduction
+>   pp.1-10, 2007.
 
-[4] Ferreira-Poblete A. The probability of conception on different days of the
-cycle with respect to ovulation: an overview[J]. Advances in Contraception,
-1997, 13(2-3): 83-95.
+>   [4] Ferreira-Poblete A. The probability of conception on different days of
+>   the cycle with respect to ovulation: an overview[J]. Advances in
+>   Contraception, 1997, 13(2-3): 83-95.
 
-[5] Su H W, Yi Y C, Wei T Y, et al. Detection of ovulation, a review of
-currently available methods[J]. Bioengineering & translational medicine, 2017,
-2(3): 238-246.
+>   [5] Su H W, Yi Y C, Wei T Y, et al. Detection of ovulation, a review of
+>   currently available methods[J]. Bioengineering & translational medicine,
+>   2017, 2(3): 238-246.
