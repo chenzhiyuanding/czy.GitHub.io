@@ -1,10 +1,6 @@
 # Intelligent home pregnancy management method based on multi-modal data fusion
 
-Yin Wang1, Zhiwei Zuo1, Wei Wang1, Nuan Qiu 1\*
-
-1 Beijing Aikangtai Technology Co., Ltd., Beijing, China
-
-Email: [qiun@ikangtai.com](mailto:qiun@ikangtai.com)
+Yin Wang, Zhiwei Zuo, Wei Wang, Nuan Qiu
 
 Abstract: With the issuance of the national three-child policy, the field of
 female reproduction has attracted more and more attention. To care for female
