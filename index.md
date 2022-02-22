@@ -14,25 +14,27 @@ Beijing, China
 
 \*qiun@ikangtai.com
 
-Abstract: With the issuance of the national three-child policy, the field of
-female reproduction has attracted more and more attention. To care for female
-reproductive health and help the implementation of the government's three child
-policy, we have proposed an intelligent home pregnancy preparation management
-method based on multimodal data fusion, namely iFAM (Fertility Awareness Method,
-iFAM). This method introduces big data, multimodal data fusion and image
-recognition technology. By inputting multi-modal data such as menstrual cycle,
-basal body temperature, ovulation test paper and cervical mucus of the pregnant
-woman, it can automatically predict the ovulation day and menstrual period
-information of the pregnant woman. This improves the pregnancy success rate of
-pregnant women, breaks the limitations of the traditional method of finding the
-ovulation day through monomodal data, and facilitates the monitoring of pregnant
-women at home. Finally, compared with the single-mode method qualitatively and
-quantitatively, the preliminary experimental results show that the accuracy of
-iFAM method in identifying ovulation date is as high as 89%, and the accuracy in
+*Abstract*—With the promulgation of the national three-child policy, the field
+of female reproduction has received more and more attention. In order to care
+for female reproductive health and help the implementation of the government's
+three-child policy, we propose a smart home pregnancy preparation based on
+multimodal data fusion Management method, namely iFAM (Intellgent Fertility
+Awareness Method, iFAM). This method introduces big data, multi-modal data
+fusion and image recognition technology. By inputting multi-modal data such as
+menstrual cycle, basal body temperature, ovulation test strips and cervical
+mucus of pregnant women, it can intelligently predict ovulation day and
+menstrual period information, breaking the traditional Methods The limitation of
+ovulation day was found through unimodal data, so as to improve the pregnancy
+success rate of pregnant women. In addition, the method has been successfully
+deployed in the Shecare APP, which enables women who are preparing to conceive
+to monitor the ovulation day at home. Finally, the qualitative and quantitative
+comparison between the iFAM method and the traditional method of predicting
+ovulation day, preliminary experimental results show that the accuracy of FAM
+method in identifying ovulation day is as high as 89%, the accuracy in
 predicting menstrual period is as high as 93%, and the pregnancy success rate of
-pregnant women can be increased to 273% in at least nine cycles.
+pregnant women can be improved. to 273%.
 
-Key words: multimodal data fusion; iFAM; ovulation day; menstrual period
+Keywords- multimodal data fusion; iFAM; ovulation day; menstrual period
 information
 
 ## INCTRODCTION
@@ -113,22 +115,23 @@ OpenCV technology to extract the test paper image from the image to be
 recognized to avoid the influence of complex backgrounds. Secondly, by using the
 CRNN model, the position of the recognition line in the image of the test paper
 to be recognized is obtained, and the color space of the position of the
-recognition line is converted into the LAB color space. Then, extract the image
-brightness value corresponding to the identification line position in the LAB
-color space, compare it with the brightness value range in the detection line
-information, and determine the preset ratio range in the detection line
+recognition line is converted into the LAB color space[6]. Then, extract the
+image brightness value corresponding to the identification line position in the
+LAB color space, compare it with the brightness value range in the detection
+line information, and determine the preset ratio range in the detection line
 information corresponding to the type of test paper. To determine the test paper
 detection result corresponding to the ratio.
-
-The data fusion structure adopts data post fusion technology, inputs four or
-more kinds of reference data into the neural network, obtains the weight of each
-reference data through training, and can more accurately lock the ovulation day.
 
 ![Fig1](https://raw.githubusercontent.com/chenzhiyuanding/czy.GitHub.io/gh-pages/image/fig1.png)
 
 Fig 1 iFAM model predicts ovulation day and menstrual period
 
 ## EXPERIMENT
+
+We compared the proposed iFAM method with several traditional methods for
+predicting the day of ovulation. In this section, we describe the dataset and
+implementation details and ablation experiments, qualitative and quantitative
+results to the effectiveness of the iFAM method.
 
 ### Dataset
 
@@ -140,7 +143,6 @@ state. This also shows that the age of women who are preparing for pregnancy in
 our country is getting older, and there are more and more cases of late marriage
 and late childbirth.
 
-In order to ensure the validity of the experiment, we excluded the pregnant women with infertility in Table 1, and divided the remaining 1636 pregnant women into four groups, with 409 pregnant women in each group, using Shecare according to our requirements. The APP (the iFAM method has been deployed into the Shecare APP) will last for up to 9 cycles of pregnancy preparation. Among them, the first group of pregnant women only entered the menstrual period information to predict the ovulation day and menstrual period according to the calendar method; the second group of pregnant women uploaded ovulation test strips to the Shecare APP based on the calendar method; and the third group of pregnant women used the calendar. method, ovulation test strips and measuring basal body temperature to prepare for pregnancy; finally, the fourth group of pregnant women signed a nine-month pregnancy guarantee plan with us, that is, every cycle of this group of pregnant women during pregnancy will continue in the APP Record menstrual information, ovulation test strips, cervical mucus, basal body temperature and intercourse data.
 
 TABLE I. 	DETAILS OF PREGNANT WOMEN
 
@@ -151,26 +153,56 @@ TABLE I. 	DETAILS OF PREGNANT WOMEN
 | **Polycystic**                 | 80         | 106        | 25         | 6          | 0           |
 | **Infertility**                | 60         | 99         | 49         | 16         | 5           |
 
-These women will continue to prepare for pregnancy for up to 9 cycles. During
-each cycle during pregnancy, menstrual information, basal body temperature and
-cervical mucus trait data will be continuously recorded, and LH test strips and
-pictures of early pregnancy test strips will be uploaded to the database.
 
-Among them, the pictures of LH test strips are marked with Labelme software.
-Labelme is an image labeling tool developed by the Computer Science and
-Artificial Intelligence Laboratory (CSAIL) of MIT. People can use this tool to
-create customized labeling tasks or perform image labeling. The source code of
-the project is open source.
+In order to ensure the validity of the experiment, we excluded the pregnant
+women with infertility in Table 1, and divided the remaining 1636 pregnant women
+into four groups, with 409 pregnant women in each group, using Shecare according
+to our requirements. The APP (the iFAM method has been deployed into the Shecare
+APP) will last for up to 9 cycles of pregnancy preparation. Among them, the
+first group of pregnant women only entered the menstrual period information to
+predict the ovulation day and menstrual period according to the calendar method;
+the second group of pregnant women uploaded ovulation test strips to the Shecare
+APP based on the calendar method; and the third group of pregnant women used the
+calendar. method, ovulation test strips and measuring basal body temperature to
+prepare for pregnancy; finally, the fourth group of pregnant women signed a
+nine-month pregnancy guarantee plan with us, that is, every cycle of this group
+of pregnant women during pregnancy will continue in the APP Record menstrual
+information, ovulation test strips, cervical mucus, basal body temperature and
+intercourse data.
+
+Among them, the thermometers used by the above-mentioned women preparing to
+upload their basal body temperature data include the Shecare basic model
+(BL-T980) and the smart model (YC-K399B), and the ovulation test strips used are
+Shecare ovulation test strips. In addition, the ovulation test strip pictures
+obtained in the iFAM method were marked with Labelme software. Labelme is an
+image annotation tool developed by the Computer Science and Artificial
+Intelligence Laboratory (CSAIL) of MIT. People can use this tool to create
+customized annotation tasks or perform image annotation. The source code of the
+project has been open sourced.
 
 ### Ablation experiment
 
-In the ablation experiment, the accuracy of predicting ovulation day and
-menstrual period was compared with multi-modal data fusion and single-modal,
-two-dimensional or three-dimensional modal data fusion. The accuracy of the iFAM
-method in identifying ovulation days (Accuracy1) is as high as 89%, and the
-accuracy in predicting menstruation (Accuracy2) is as high as 93%. The accuracy
-of predicting ovulation day and menstrual period is higher than that of
-single-modal, two-dimensional or three-dimensional modal data fusion.
+Firstly, we compared the accuracy of the iFAM method in predicting ovulation
+days and menstrual periods with single-, two-, or three-dimensional data
+prediction methods using the above-mentioned control group for 9 months of
+pregnancy. From Table 2, it can be seen that the accuracy of iFAM method in
+identifying ovulation day (Accuracy1) is as high as 89%, and the accuracy in
+predicting menstrual period (Accuracy2) is as high as 93%. Higher accuracy than
+predictions of ovulation day and menstrual period by unimodal, two-dimensional
+or three-dimensional modal data methods.
+
+Secondly, we analyzed the effect of the iFAM method and the traditional
+ovulation day method on pregnancy success in age-based women trying to conceive.
+It is widely believed that the prime time to have children is in the 20s. Eggs
+are of the highest quality when you are in your 20s, and sperm quality is
+generally healthy for men of that age. Generally speaking, people are at their
+best fertile during this time, but many may not be mentally or financially ready
+for it. In your 30s, your chances of getting pregnant are only slightly lower
+than in your 20s. 35s is often emphasized because that's about when the decline
+gets faster. Although fertility does decline over time, it declines more rapidly
+after age 35. The number of pregnancies in your 40s is increasing every year,
+largely because of assisted reproductive technology (ART) procedures such as in
+vitro fertilization (IVF)[7].
 
 TABLE II. 	TABLE OF RESULTS OF ABLATION EXPERIMENTS
 
@@ -180,6 +212,7 @@ TABLE II. 	TABLE OF RESULTS OF ABLATION EXPERIMENTS
 | **Two-dimensional**   | √      | -       | -                  | √                   | 81.3%            | -                |
 | **Three-dimensional** | √      | √       | -                  | √                   | 85.2%            | 89.8%            |
 | **iFAM**              | √      | √       | √                  | √                   | 88.9%            | 93%              |
+
 
 TABLE III. 	DETAILS OF PREGNANCY SUCCESS RATE OF WOMEN BEFORE PREGNANCY PREPARATION
 
@@ -198,12 +231,16 @@ TABLE IV. 	USING THE TRADITIONAL SINGLE, TWO-DIMENSIONAL OR THREE-DIMENSIONAL MO
 | **iFAM**              | 69%        | 63%        | 55%        | 21%        | 10%         |
 
 
-Table 2 and Table 3 show that using the iFAM method, the pregnancy success rate
-of pregnant women is the highest. From this, we can see the importance of
-finding the ovulation day. In response to the above-mentioned, the key to a fast
-and natural pregnancy is to find the ovulation day of the pregnant woman. As
-long as the ovulation day is found and the intercourse is arranged in time,
-pregnancy is a natural thing.
+However, according to Table 3 and Table 4, although the probability of pregnancy
+is limited by age, after signing a guarantee plan with us, by using the iFAM
+method in the APP, the compliance of pregnant women is strengthened, thereby
+increasing the pregnancy success rate by 173%. That is, the pregnancy success
+rate after nine cycles is about 3 times higher than the pregnancy success rate
+at the beginning. From this, we can also see the importance of identifying the
+ovulation day, which is in response to the above-mentioned, the key to fast and
+natural pregnancy is to find the ovulation day of the pregnant woman. As long as
+the ovulation day is found, and the intercourse is arranged in time, pregnancy
+is a natural thing.
 
 ## CONCLUSION
 
