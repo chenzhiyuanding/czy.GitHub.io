@@ -278,3 +278,10 @@ predicting the ovulation day of pregnant women.
 >   [5] Su H W, Yi Y C, Wei T Y, et al. Detection of ovulation, a review of
 >   currently available methods[J]. Bioengineering & translational medicine,
 >   2017, 2(3): 238-246.
+>   
+>   [6] Dunson D B, Sinai I, Colombo B. The relationship between cervical secretions
+>   and the daily probabilities of pregnancy: effectiveness of the TwoDay
+>   Algorithm[J]. Human Reproduction, 2001, 16(11): 2278-2282.
+>   [7] Wesselink A K, Rothman K J, Hatch E E, et al. Age and fecundability in a
+>   North American preconception cohort study[J]. American journal of obstetrics
+>   and gynecology, 2017, 217(6): 667. e1-667. e8.
