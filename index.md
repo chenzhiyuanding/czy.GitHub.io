@@ -1,13 +1,25 @@
+
+
 # Intelligent home pregnancy management method based on multi-modal data fusion
 
-Yin Wang, Zhiwei Zuo, Wei Wang, Nuan Qiu
+Yin Wang1,2, LiQun Yu3 Zhiwei Zuo1,2, Wei Wang1,2, Nuan Qiu1,2\*
+
+1Beijing Aikangtai Technology Co., Ltd., Haidian District, Beijing, China
+
+2Zhejiang Yuncheng Medical Technology Co., Ltd., Jiaxing District, Hangzhou,
+Zhejiang Province, China
+
+3 Aviation General Hospital of China Medical University, Chaoyang District,
+Beijing, China
+
+\*qiun@ikangtai.com
 
 Abstract: With the issuance of the national three-child policy, the field of
 female reproduction has attracted more and more attention. To care for female
 reproductive health and help the implementation of the government's three child
 policy, we have proposed an intelligent home pregnancy preparation management
-method based on multimodal data fusion, namely FAM (Fertility Awareness Method,
-FAM). This method introduces big data, multimodal data fusion and image
+method based on multimodal data fusion, namely iFAM (Fertility Awareness Method,
+iFAM). This method introduces big data, multimodal data fusion and image
 recognition technology. By inputting multi-modal data such as menstrual cycle,
 basal body temperature, ovulation test paper and cervical mucus of the pregnant
 woman, it can automatically predict the ovulation day and menstrual period
@@ -16,11 +28,11 @@ pregnant women, breaks the limitations of the traditional method of finding the
 ovulation day through monomodal data, and facilitates the monitoring of pregnant
 women at home. Finally, compared with the single-mode method qualitatively and
 quantitatively, the preliminary experimental results show that the accuracy of
-FAM method in identifying ovulation date is as high as 89%, and the accuracy in
+iFAM method in identifying ovulation date is as high as 89%, and the accuracy in
 predicting menstrual period is as high as 93%, and the pregnancy success rate of
 pregnant women can be increased to 273% in at least nine cycles.
 
-Key words: multimodal data fusion; FAM; ovulation day; menstrual period
+Key words: multimodal data fusion; iFAM; ovulation day; menstrual period
 information
 
 ## INCTRODCTION
@@ -82,7 +94,7 @@ basis, and inputs the menstrual cycle data and basal body temperature data of
 each pregnant woman, Ovulation test paper data and cervical mucus data, combined
 with the information of these data, automatically predict the ovulation day and
 menstrual period information of the pregnant woman. Preliminary experimental
-results show that the accuracy of the FAM method in identifying ovulation days
+results show that the accuracy of the iFAM method in identifying ovulation days
 is as high as 89%, and the accuracy in predicting menstruation is as high as
 93%, and the pregnancy success rate of pregnant women can be increased to 273%.
 
@@ -128,14 +140,16 @@ state. This also shows that the age of women who are preparing for pregnancy in
 our country is getting older, and there are more and more cases of late marriage
 and late childbirth.
 
-Table 1 Details of pregnant women
+In order to ensure the validity of the experiment, we excluded the pregnant women with infertility in Table 1, and divided the remaining 1636 pregnant women into four groups, with 409 pregnant women in each group, using Shecare according to our requirements. The APP (the iFAM method has been deployed into the Shecare APP) will last for up to 9 cycles of pregnancy preparation. Among them, the first group of pregnant women only entered the menstrual period information to predict the ovulation day and menstrual period according to the calendar method; the second group of pregnant women uploaded ovulation test strips to the Shecare APP based on the calendar method; and the third group of pregnant women used the calendar. method, ovulation test strips and measuring basal body temperature to prepare for pregnancy; finally, the fourth group of pregnant women signed a nine-month pregnancy guarantee plan with us, that is, every cycle of this group of pregnant women during pregnancy will continue in the APP Record menstrual information, ovulation test strips, cervical mucus, basal body temperature and intercourse data.
 
-| Age                        | 20\~25 | 26\~30 | 31\~35 | 36\~40 | Above 40 |
-|----------------------------|--------|--------|--------|--------|----------|
-| Healthy                    | 380    | 568    | 229    | 77     | 22       |
-| Insufficient corpus luteum | 2      | 12     | 10     | 3      | 0        |
-| Polycystic                 | 80     | 106    | 25     | 6      | 0        |
-| Infertility                | 60     | 99     | 49     | 16     | 5        |
+TABLE I. 	DETAILS OF PREGNANT WOMEN
+
+| **AGE**                        | **20\~25** | **26\~30** | **31\~35** | **36\~40** | **Over 40** |
+|--------------------------------|------------|------------|------------|------------|-------------|
+| **Healthy**                    | 380        | 568        | 229        | 77         | 22          |
+| **Insufficient corpus luteum** | 2          | 12         | 10         | 3          | 0           |
+| **Polycystic**                 | 80         | 106        | 25         | 6          | 0           |
+| **Infertility**                | 60         | 99         | 49         | 16         | 5           |
 
 These women will continue to prepare for pregnancy for up to 9 cycles. During
 each cycle during pregnancy, menstrual information, basal body temperature and
@@ -152,29 +166,39 @@ the project is open source.
 
 In the ablation experiment, the accuracy of predicting ovulation day and
 menstrual period was compared with multi-modal data fusion and single-modal,
-two-dimensional or three-dimensional modal data fusion. The accuracy of the FAM
+two-dimensional or three-dimensional modal data fusion. The accuracy of the iFAM
 method in identifying ovulation days (Accuracy1) is as high as 89%, and the
 accuracy in predicting menstruation (Accuracy2) is as high as 93%. The accuracy
 of predicting ovulation day and menstrual period is higher than that of
 single-modal, two-dimensional or three-dimensional modal data fusion.
 
-Table 2 Table of results of ablation experiments
+TABLE II. 	TABLE OF RESULTS OF ABLATION EXPERIMENTS
 
-| Method            | LH | BBT | Cervical mucus | Calendar method | Accuracy1(%) | Accuracy2(%) |
-|-------------------|----|-----|----------------|-----------------|--------------|--------------|
-| Single mode       | √  | -   | -              | -               | 72.6%        | -            |
-| Two-dimensional   | √  | √   | -              | -               | 81.3%        | -            |
-| Three-dimensional | √  | √   | -              | √               | 85.2%        | 89.8%        |
-| FAM               | √  | √   | √              | √               | 88.9%        | 93%          |
+| **Method**            | **LH** | **BBT** | **Cervical mucus** | **Calendar method** | **Accuracy1(%)** | **Accuracy2(%)** |
+|-----------------------|--------|---------|--------------------|---------------------|------------------|------------------|
+| **Single mode**       | -      | -       | -                  | √                   | 72.6%            | -                |
+| **Two-dimensional**   | √      | -       | -                  | √                   | 81.3%            | -                |
+| **Three-dimensional** | √      | √       | -                  | √                   | 85.2%            | 89.8%            |
+| **iFAM**              | √      | √       | √                  | √                   | 88.9%            | 93%              |
 
-Table 3 Details of the pregnancy success rate of 9-cycle pregnant women
+TABLE III. 	DETAILS OF PREGNANCY SUCCESS RATE OF WOMEN BEFORE PREGNANCY PREPARATION
 
-| Age                                 | 20\~25 | 26\~30 | 31\~35 | 36\~40 | 40以上 |
-|-------------------------------------|--------|--------|--------|--------|--------|
-| Healthy/ Insufficient corpus luteum | 98%    | 97%    | 92%    | 89%    | 70%    |
-| Polycystic                          | 87.5%  | 80.1%  | 68.0%  | 50%    | -      |
+| **AGE**                    | **20\~25** | **26\~30** | **31\~35** | **36\~40** | **over 40** |
+|----------------------------|------------|------------|------------|------------|-------------|
+| **Pregnancy success rate** | 25%        | 20%        | 15%        | 10%        | 5%          |
 
-Table 2 and Table 3 show that using the FAM method, the pregnancy success rate
+
+TABLE IV. 	USING THE TRADITIONAL SINGLE, TWO-DIMENSIONAL OR THREE-DIMENSIONAL MODAL METHOD AND IFAM METHOD, THE PREGNANCY SUCCESS RATE OF WOMEN WITH 9 CYCLES OF BACKUP PREGNANCY WAS DETAILED
+
+| **AGE**               | **20\~25** | **26\~30** | **31\~35** | **36\~40** | **over 40** |
+|-----------------------|------------|------------|------------|------------|-------------|
+| **Single mode**       | 45%        | 41%        | 38%        | 13%        | 7%          |
+| **Two-dimensional**   | 53%        | 46%        | 44%        | 15%        | 7%          |
+| **Three-dimensional** | 58%        | 52%        | 49%        | 15%        | 8%          |
+| **iFAM**              | 69%        | 63%        | 55%        | 21%        | 10%         |
+
+
+Table 2 and Table 3 show that using the iFAM method, the pregnancy success rate
 of pregnant women is the highest. From this, we can see the importance of
 finding the ovulation day. In response to the above-mentioned, the key to a fast
 and natural pregnancy is to find the ovulation day of the pregnant woman. As
@@ -184,7 +208,7 @@ pregnancy is a natural thing.
 ## CONCLUSION
 
 In this paper, we focus on solving the problem of home pregnancy monitoring and
-management of pregnant women. The IFAM model we proposed introduces the hed and
+management of pregnant women. The iFAM model we proposed introduces the hed and
 crnn framework, and uses deep learning and opencv technology to fuse multimodal
 data to obtain more fusion information, to predict the ovulation date and
 menstrual period of pregnant women, to improve the success rate of women's
